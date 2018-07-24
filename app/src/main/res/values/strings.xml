@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MoneyBank</string>
+    <string name="section">Ingresa los datos del prestamo</string>
+    <string name="amountLoan">Monto del préstamo en RD$:</string>
+    <string name="rate">Tasa de Porcentaje Anual %:</string>
+    <string name="time">Plazo:</string>
+    <string name="clearButton">Limpiar</string>
+    <string name="calculateButton">Calcular</string>
+</resources>
