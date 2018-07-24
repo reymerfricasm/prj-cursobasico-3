@@ -6,4 +6,7 @@
     <string name="time">Plazo:</string>
     <string name="clearButton">Limpiar</string>
     <string name="calculateButton">Calcular</string>
+    <string name="hintAmout">RD$250,000.00</string>
+    <string name="hintRate">16.95%</string>
+    <string name="hintTime">60</string>
 </resources>

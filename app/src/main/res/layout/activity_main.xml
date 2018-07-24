@@ -21,6 +21,7 @@
 
     <EditText
         android:id="@+id/amountEdit"
+        android:hint="@string/hintAmout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -39,6 +40,7 @@
         app:layout_constraintTop_toTopOf="parent" />
     <EditText
         android:id="@+id/rateEdit"
+        android:hint="@string/hintRate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -56,6 +58,7 @@
         app:layout_constraintTop_toTopOf="parent" />
     <EditText
         android:id="@+id/timeEdit"
+        android:hint="@string/hintTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -66,6 +69,7 @@
         android:id="@+id/calculate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/buttonYellow"
         android:text="@string/calculateButton" />
 
     <Button
