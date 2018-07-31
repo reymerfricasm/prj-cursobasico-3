@@ -9,4 +9,9 @@
     <string name="hintAmout">RD$250,000.00</string>
     <string name="hintRate">16.95%</string>
     <string name="hintTime">60</string>
+    <string name="mainActivityMsg">Calculadora de prestamos</string>
+    <string name="subTitleMainActivityMsg">Ingresa los datos</string>
+    <string name="amortizationView">Tabla de amortización</string>
+    <string name="paymentsDetails">Tabla de amortización</string>
+    <string name="nullValues">No pueden haber campos vacios.</string>
 </resources>

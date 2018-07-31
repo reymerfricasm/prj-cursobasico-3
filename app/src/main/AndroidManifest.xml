@@ -16,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".amount_payments" />
+        <activity android:name=".AmountPaymentsActivity" />
+        <activity android:name=".GridViewItem"></activity>
     </application>
 
 </manifest>

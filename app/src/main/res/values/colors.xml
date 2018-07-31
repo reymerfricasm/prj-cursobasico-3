@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#ccac00</color>
     <color name="colorAccent">#ffd700</color>
     <color name="buttonYellow">#ffd700</color>
+    <color name="dangerColor">#dc3545</color>
+    <color name="colorBlack">#000</color>
 </resources>
