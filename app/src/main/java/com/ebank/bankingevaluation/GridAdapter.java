@@ -1,6 +1,7 @@
 package com.ebank.bankingevaluation;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import java.util.Currency;
 import java.util.List;
+import java.util.Objects;
 
 public class GridAdapter extends ArrayAdapter<Amortization> {
 
@@ -29,13 +31,13 @@ public class GridAdapter extends ArrayAdapter<Amortization> {
         TextView capitalPayment = convertView.findViewById(R.id.capitalPaymentId);
         TextView payment = convertView.findViewById(R.id.paymentId);
 
-        amount.setText("Monto: RD$" + Double.toString(table.amount));
-        rate.setText("Tasa:%" + Double.toString(table.rate));
-        time.setText("Pago:" + Double.toString(table.time));
-        payment.setText("Cuota: RD$" + Double.toString(table.payment));
-        interest.setText("Interes: " + Double.toString(table.interest));
-        capitalPayment.setText("Pago capital: RD$" + Double.toString(table.capitalPayment));
-        currentCapital.setText("Capital restante: RD$" + Double.toString(table.currentCapital));
+            amount.setText(String.format("Monto: RD$%s", Double.toString(Objects.requireNonNull(table).amount)));
+            rate.setText(String.format("Tasa:%%%s", Double.toString(table.rate)));
+            time.setText(String.format("Pago:%s", Double.toString(table.time)));
+            payment.setText(String.format("Cuota: RD$%s", Double.toString(table.payment)));
+            interest.setText(String.format("Interes: %s", Double.toString(table.interest)));
+            capitalPayment.setText(String.format("Pago capital: RD$%s", Double.toString(table.capitalPayment)));
+            currentCapital.setText(String.format("Capital restante: RD$%s", Double.toString(table.currentCapital)));
         return  convertView;
     }
 }

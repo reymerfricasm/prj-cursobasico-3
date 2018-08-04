@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private EditText mAmountText, mRateText, mTimeText;
     private String[] data = new String[3];
@@ -68,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTimeText.setText("");
     }
     private void setBasicView(){
-        getSupportActionBar().setTitle(R.string.mainActivityMsg);
+        Objects.requireNonNull(getSupportActionBar()).setTitle(R.string.mainActivityMsg);
         getSupportActionBar().setSubtitle(R.string.subTitleMainActivityMsg);
     }
     private void setListeners(){
