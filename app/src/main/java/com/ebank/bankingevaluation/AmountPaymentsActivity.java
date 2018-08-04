@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AmountPaymentsActivity extends AppCompatActivity{
-    private TextView mAmount, mRate, mTime;
+    private EditText mAmount, mRate, mTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,14 +66,5 @@ public class AmountPaymentsActivity extends AppCompatActivity{
         getSupportActionBar().setTitle(R.string.amortizationView);
         getSupportActionBar().setSubtitle(R.string.paymentsDetails);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-    private void fillTextView(String[] data){
-        mAmount = findViewById(R.id.amount2);
-        mRate = findViewById(R.id.rate2);
-        mTime = findViewById(R.id.time2);
-
-        mAmount.setText(data[0]);
-        mRate.setText(data[1]);
-        mTime.setText(data[2]);
     }
 }
