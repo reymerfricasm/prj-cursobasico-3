@@ -1,18 +1,23 @@
 package com.ebank.bankingevaluation;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.TextView;
 
+import java.lang.reflect.AccessibleObject;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AmountPaymentsActivity extends AppCompatActivity{
+    private TextView mAmount, mRate, mTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +26,12 @@ public class AmountPaymentsActivity extends AppCompatActivity{
         setBasicView();
         GridView gridView = findViewById(R.id.gridViewComponent);
 
-        List<String> list = new ArrayList<>();
-        for (int i = 0; i < 100; i++){
-            list.add(Integer.toString(i  + 1));
-        }
-        gridView.setAdapter(new ArrayAdapter<>(this, R.layout.activity_grid_view_item, list));
+        Financial bank = Financial.getInstance();
+        final List<Amortization> table = new ArrayList<>();
+
+        table.addAll(bank.getAmortization(500,10.1, 120));
+        GridAdapter adapter = new GridAdapter(this, table);
+        gridView.setAdapter(adapter);
     }
 
     @Override
@@ -38,7 +44,7 @@ public class AmountPaymentsActivity extends AppCompatActivity{
     private void confirmBack(){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(getString(R.string.app_name));
-            builder.setMessage("Seguro que deseas ir atras");
+            builder.setMessage(R.string.confirm);
 
             builder.setPositiveButton("SI", new DialogInterface.OnClickListener() {
                 @Override
@@ -60,5 +66,14 @@ public class AmountPaymentsActivity extends AppCompatActivity{
         getSupportActionBar().setTitle(R.string.amortizationView);
         getSupportActionBar().setSubtitle(R.string.paymentsDetails);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+    private void fillTextView(String[] data){
+        mAmount = findViewById(R.id.amount2);
+        mRate = findViewById(R.id.rate2);
+        mTime = findViewById(R.id.time2);
+
+        mAmount.setText(data[0]);
+        mRate.setText(data[1]);
+        mTime.setText(data[2]);
     }
 }

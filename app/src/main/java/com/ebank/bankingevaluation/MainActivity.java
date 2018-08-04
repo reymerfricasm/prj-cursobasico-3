@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private EditText mAmountText, mRateText, mTimeText;
+    private String[] data = new String[3];
+    public static final String INTENT_KEY = "NAME";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,27 +29,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 CleanText();
                 break;
             case R.id.calculate:
-                if(validateNotNullValues()){ //just true
-                    startActivity(new Intent(this, AmountPaymentsActivity.class));
-                } else { //case false
+                if(validateNotNullValues()){
+                   /*data[0] = mAmountText.getText().toString();
+                    data[1] = mRateText.getText().toString();
+                    data[2] = mTimeText.getText().toString();*/
+                    Intent intent = new Intent(this, AmountPaymentsActivity.class);
+                    //intent.putExtra(INTENT_KEY, data);
+                    startActivity(intent);
+                } else {
                     sendExceptionMessage();
                 }
                 break;
         }
     }
     private void sendExceptionMessage() {
-        Toast.makeText(this, R.string.nullValues, Toast.LENGTH_SHORT);
+        Toast.makeText(this, R.string.nullValues, Toast.LENGTH_SHORT).show();
     }
     private boolean validateNotNullValues(){
         mAmountText = findViewById(R.id.amountEdit);
         mRateText = findViewById(R.id.rateEdit);
         mTimeText = findViewById(R.id.timeEdit);
+        String amount = mAmountText.getText().toString();
+        String rate = mRateText.getText().toString();
+        String time = mTimeText.getText().toString();
 
-        if(mAmountText.getText().equals(null) && mTimeText.getText() != null && mRateText.getText() != null){
-            return true;
-        } else{
-            return false;
-        }
+        return amount.isEmpty() || rate.isEmpty() || time.isEmpty() ? false : true;
     }
     private void CleanText(){
         mAmountText = findViewById(R.id.amountEdit);
@@ -65,5 +71,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void setListeners(){
         findViewById(R.id.clear).setOnClickListener(this);
         findViewById(R.id.calculate).setOnClickListener(this);
-    };
+    }
 }
