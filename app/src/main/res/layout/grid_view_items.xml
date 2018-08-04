@@ -8,26 +8,39 @@
     <TextView
         android:id="@+id/amountItems"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        style="@style/tableText"
+        android:layout_height="match_parent"/>
     <TextView
         android:id="@+id/rateId"
+        style="@style/tableText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"/>
     <TextView
         android:id="@+id/timeId"
+        style="@style/tableText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"/>
     <TextView
-        android:id="@+id/currentCapitalId"
+        android:id="@+id/paymentId"
+        style="@style/tableText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"/>
+
     <TextView
         android:id="@+id/interestId"
+        style="@style/tableText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"/>
     <TextView
         android:id="@+id/capitalPaymentId"
+        style="@style/tableText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:id="@+id/currentCapitalId"
+        style="@style/tableText"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

@@ -15,4 +15,11 @@
     <string name="paymentsDetails">Tabla de amortización</string>
     <string name="nullValues">No pueden haber campos vacios.</string>
     <string name="confirm">¿Seguro que desea ir atras?</string>
+    <string name="tableAmount">Monto: RD$</string>
+    <string name="tableRate">Tasa:%</string>
+    <string name="tableTime">No. Pago</string>
+    <string name="tablePayment">Cuota: RD$</string>
+    <string name="tableInterest">Interes: </string>
+    <string name="tableCapitalPayment">Pago capital: RD$</string>
+    <string name="tableCurrentCapital">Capital restante: RD$</string>
 </resources>

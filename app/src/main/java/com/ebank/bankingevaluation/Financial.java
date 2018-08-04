@@ -26,13 +26,14 @@ public class Financial {
         Amortization model = new Amortization();
         for ( int i = 1; i <= time; i++ ){
             model.rate = rate;
-            model.amount = amount;
-            model.time = time;
-            model.interest = amount * tempRate;
-            model.capitalPayment = r - model.interest;
-            amount = amount - model.capitalPayment;
-            model.currentCapital = amount - model.capitalPayment;
-            table.add(model);
+            model.amount = Math.round(amount);
+            model.time = i;
+            model.interest = Math.round((amount * tempRate));
+            model.capitalPayment = Math.round((r - model.interest));
+            amount = Math.round((amount - model.capitalPayment));
+            model.currentCapital = amount;
+            model.payment = Math.round(r);
+            table.add(new Amortization(model.amount, model.rate, model.time, model.currentCapital, model.interest, model.capitalPayment, model.payment));
         }
         return table;
     }

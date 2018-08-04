@@ -4,10 +4,13 @@ import android.content.Intent;
 import android.os.strictmode.CleartextNetworkViolation;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private EditText mAmountText, mRateText, mTimeText;
@@ -30,11 +33,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.calculate:
                 if(validateNotNullValues()){
-                   /*data[0] = mAmountText.getText().toString();
+                    data[0] = mAmountText.getText().toString();
                     data[1] = mRateText.getText().toString();
-                    data[2] = mTimeText.getText().toString();*/
-                    Intent intent = new Intent(this, AmountPaymentsActivity.class);
-                    //intent.putExtra(INTENT_KEY, data);
+                    data[2] = mTimeText.getText().toString();
+                    Intent intent = new Intent(MainActivity.this, AmountPaymentsActivity.class);
+                    intent.putExtra(INTENT_KEY, data);
                     startActivity(intent);
                 } else {
                     sendExceptionMessage();

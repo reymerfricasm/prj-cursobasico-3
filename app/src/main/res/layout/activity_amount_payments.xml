@@ -12,31 +12,31 @@
         style="@style/textStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/amountLoan"
+        android:text=""
         android:layout_gravity="center"/>
     <TextView
         android:id="@+id/rate2"
         style="@style/textStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/rate"
+        android:text=""
         android:layout_gravity="center"/>
     <TextView
         android:id="@+id/time2"
         style="@style/textStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/time"
+        android:text=""
         android:layout_gravity="center" />
 
     <GridView
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/gridViewComponent"
-        android:columnWidth="100dp"
+        android:columnWidth="250dp"
         android:horizontalSpacing="10dp"
         android:verticalSpacing="10dp"
-        android:numColumns="6"
-        android:stretchMode="columnWidth"
+        android:numColumns="1"
+        android:stretchMode="none"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
